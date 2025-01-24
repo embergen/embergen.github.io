@@ -1,13 +1,12 @@
 ---
 title: Regression Basics
-date: 2025-01-16
+date: 2025-01-16 00:00:00+0000
 description: Initial blog post with a basic review of using sk-learn for regression
 tags: 
     - scikit-learn
-    - regression
-    - python
+    - linear regression
 categories:
-    - regression
+    - python
 ---
 
 I decided to get a blog going for my data science notes. It's an excuse to get more familiar with github, and it's a different way to document what I'm working on without the pressure of making a presentable project for my portfolio. 
