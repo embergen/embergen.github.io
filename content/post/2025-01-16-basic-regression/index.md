@@ -5,6 +5,7 @@ description: Initial blog post with a basic review of using sk-learn for regress
 tags: 
     - scikit-learn
     - linear regression
+    - supervised learning
 categories:
     - python
 ---

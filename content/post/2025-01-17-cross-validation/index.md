@@ -6,6 +6,7 @@ tags:
     - scikit-learn
     - linear regression
     - cross-validation
+    - supervised learning
 categories:
     - python
 ---

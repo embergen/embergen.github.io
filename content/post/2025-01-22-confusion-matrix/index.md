@@ -6,6 +6,7 @@ tags:
     - scikit-learn
     - metrics
     - classification
+    - supervised learning
 categories:
     - python
 #image: 2025-01-22_code-output.png

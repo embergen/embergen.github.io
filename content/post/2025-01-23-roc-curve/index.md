@@ -6,6 +6,7 @@ tags:
     - scikit-learn
     - metrics
     - logistic regression
+    - supervised learning
 categories:
     - python
 #image: 2025-01-23_logistic-reg-boundary.png
@@ -66,7 +67,7 @@ plt.show()
 ```
 
 The dotted line in the center represents a model that just randomly guesses. So what does this ROC model actually tell us? 
-* We calculate the area under the ROC curve (AUC metric). Scores range from 0 to 1 with 1 being the best. 
+* We calculate the area under the ROC curve (AUC). Scores range from 0 to 1 with 1 being the best. If the AUC is 0.5, it means the model is no better than a random guess. 
 * When the ROC curve is above the dotted line, it means the model is better than just randomly guessing. 
 
 ```python

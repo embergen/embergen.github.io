@@ -6,6 +6,7 @@ tags:
     - scikit-learn
     - hyperparameters
     - cross-validation
+    - supervised learning
 categories:
     - python
 #image: 2025-01-23_logistic-reg-boundary.png

@@ -7,6 +7,7 @@ tags:
     - linear regression
     - overfitting
     - regularization
+    - supervised learning
 categories:
     - python
 ---
