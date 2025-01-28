@@ -6,8 +6,9 @@ tags:
     - scikit-learn
     - linear regression
     - supervised learning
-categories:
     - python
+categories:
+    - machine learning
 ---
 
 I decided to get a blog going for my data science notes. It's an excuse to get more familiar with github, and it's a different way to document what I'm working on without the pressure of making a presentable project for my portfolio. 

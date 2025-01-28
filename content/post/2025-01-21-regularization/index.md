@@ -8,8 +8,9 @@ tags:
     - overfitting
     - regularization
     - supervised learning
-categories:
     - python
+categories:
+    - machine learning
 ---
 
 # Overfitting and Regularization

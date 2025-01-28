@@ -7,8 +7,9 @@ tags:
     - linear regression
     - cross-validation
     - supervised learning
-categories:
     - python
+categories:
+    - machine learning
 ---
 
 The R2 value that is returned is affected by how the data randomly happened to be split. Cross-validation helps by splitting the data into sets of groups called "folds". Let's say we split the data into 10 folds (k=10). We use the first fold as the test set, fit the model on the other folds, make predictions, and then calculate the test metric (e.g. R2). Then, the preocess is repeated but with the other folds taking turn as the test set. In the end, we will have 10 values for our test metric and can calculate their mean/median etc. 

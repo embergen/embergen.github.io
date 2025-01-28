@@ -7,9 +7,10 @@ tags:
     - hyperparameters
     - cross-validation
     - supervised learning
-categories:
     - python
-#image: 2025-01-23_logistic-reg-boundary.png
+
+categories:
+    - machine learning
 ---
 
 Different models have different **hyperparameters** that we can tune to increase model performance. Hyperparameters are parameters that we specify before fitting the model to the data. 
@@ -60,7 +61,7 @@ print(ridge_cv.best_params_, ridge_cv.best_score_)
 
 ## Random Search CV
 
-This process picks random hyperparameter values rather than searching through all possible combinations of the hyperparameter values we feed it, so it is less resource demanding than grid search. The process in scikit-learn is very similar to the one above:
+In Random Search CV, you still feed the model specific values, but instead of running thorugh every possible combination of values, it will randomly select combinations to test. As a result, random search is less resource demanding than grid search. The process in scikit-learn is very similar to the one above:
 
 ```python
 # Import Random Search CV

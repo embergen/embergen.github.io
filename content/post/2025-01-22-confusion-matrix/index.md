@@ -7,8 +7,9 @@ tags:
     - metrics
     - classification
     - supervised learning
-categories:
     - python
+categories:
+    - machine learning
 #image: 2025-01-22_code-output.png
 ---
 

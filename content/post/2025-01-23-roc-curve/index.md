@@ -7,8 +7,9 @@ tags:
     - metrics
     - logistic regression
     - supervised learning
-categories:
     - python
+categories:
+    - machine learning
 #image: 2025-01-23_logistic-reg-boundary.png
 ---
 
