@@ -7,7 +7,7 @@ tags:
     - supervised learning
     - python
     - pandas
-    - data cleaning
+    - data preparation
 categories:
     - machine learning
 ---

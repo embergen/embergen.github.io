@@ -7,7 +7,7 @@ tags:
     - supervised learning
     - python
     - pandas
-    - data cleaning
+    - data preparation
     - pipelines
 categories:
     - machine learning
@@ -28,7 +28,7 @@ So, what are the options for handling missing values?
 
 ### Dropping Observations
 
-We can use pandas' dropna() function to remove missing observations. We can specify a subset of features that we want to check for null values. This removes all rows with missing values in those columns. 
+We can use pandas' dropna() function to remove missing observations. We can specify a subset of features that we want to check for null values. This removes all rows with missing values in those columns. As a result, you wouldn't want to use this strategy indiscriminately. 
 
 ```python
 df = df.dropna(subset=["feature1", "feature2", "feature3"])
