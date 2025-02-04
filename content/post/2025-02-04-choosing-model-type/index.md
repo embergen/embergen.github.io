@@ -1,6 +1,6 @@
 ---
-title: Evaluating Multiple Models
-description: 
+title: Choosing a Model
+description: Comparing how different types of model perform with your data to select the best option
 date: 2025-02-04 00:00:00+0000
 tags: 
     - scikit-learn
