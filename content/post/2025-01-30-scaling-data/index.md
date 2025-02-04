@@ -1,6 +1,6 @@
 ---
 title: Normalization
-description: 
+description: Use StandardScaler() to put numerical features on the same scale for ML
 date: 2025-01-30 00:00:00+0000
 tags: 
     - scikit-learn
@@ -14,7 +14,7 @@ categories:
 
 Why is it important to scale our data? Different numeric variables have have very different ranges. One might be represented only by values from 0 to 1, while another might be in the millions (or millionths). 
 
-Many ML models (e.g. KNN) are influenced by distance, so a feature with a large scale would impact the model more than a feature with a small scale. So, we **standardize** our data so that our features are represented by similar scales. (There are other methods as well.)
+Many ML models (e.g. KNN, linear/ridge/lasso, log reg, ANN) are influenced by distance, so a feature with a large scale would impact the model more than a feature with a small scale. So, we **standardize** our data so that our features are represented by similar scales. (There are other methods as well.)
 
 ## Standardization
 
