@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Metrics on Esther's Learning Journal</title><link>https://embergen.github.io/tags/metrics/</link><description>Recent content in Metrics on Esther's Learning Journal</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 23 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://embergen.github.io/tags/metrics/index.xml" rel="self" type="application/rss+xml"/><item><title>Logistic Regression and ROC Curves</title><link>https://embergen.github.io/p/logistic-regression-and-roc-curves/</link><pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate><guid>https://embergen.github.io/p/logistic-regression-and-roc-curves/</guid><description>&lt;p>&lt;strong>Logistic regression&lt;/strong> a type of regression used in supervised machine learning for binary classification problems. It used features to output the probability (p) on whether or not an observation belongs to a binary class.&lt;/p>
+&lt;ul>
+&lt;li>If p &amp;gt; 0.5, the data is labeled as a member of that class (1).&lt;/li>
+&lt;li>If p &amp;lt; 0.5, the data is NOT labeled as a member (0).&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://embergen.github.io/p/logistic-regression-and-roc-curves/2025-01-23_logistic-reg-boundary.png"
+width="616"
+height="483"
+srcset="https://embergen.github.io/p/logistic-regression-and-roc-curves/2025-01-23_logistic-reg-boundary_hu_3fe3b3d4d08fc558.png 480w, https://embergen.github.io/p/logistic-regression-and-roc-curves/2025-01-23_logistic-reg-boundary_hu_6bf96a5b96a7b55b.png 1024w"
+loading="lazy"
+alt="linear boundary in logistic regression"
+class="gallery-image"
+data-flex-grow="127"
+data-flex-basis="306px"
+>&lt;/p>
+&lt;p>How to perform logistic regression with scikit-learn:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Import the library&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">sklearn.linear_model&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">LogisticRegression&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Instantiate the classifier model&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">logreg&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">LogisticRegression&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Split the data&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">X_train&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">X_test&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_train&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_test&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">train_test_split&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">X&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Y&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">test_size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">random_state&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">99&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Fit the model&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">logreg&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">X_train&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_train&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Predict from the test set&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">y_pred&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">logreg&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">predict&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">X_test&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>We can also get the exact probability for each instance using the predict_proba method, which returns a 2D array of probilities for 0 (left column) and 1 (right column).&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Apply predict_proba to the right column (index 1)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">y_pred_probs&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">logreg&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">predict_proba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">X_test&lt;/span>&lt;span class="p">)[:,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The default threshold for p is 0.5, but you can adjust it. An ROC curve will show how different thresholds affect the true positive and false positive rates. As I talked about in yesterday&amp;rsquo;s post about the confusion matrix, the nature of your study will determine whether you care more about false positives (false alarms) or false negatives (missed true positives).&lt;/p>
+&lt;p>We can plot an ROC curve in Python using the y_pred_probs from the previous code:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Import the library&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">sklearn.metrics&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">roc_curve&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Call the roc_curve function. &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># fpr = false positive rate, tpr = true positive rate&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">fpr&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">tpr&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">thresholds&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">roc_curve&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">y_test&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_pred_probs&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Plot the line&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">plot&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="s1">&amp;#39;k--&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">plot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">fpr&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">tpr&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">xlabel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;False Positive Rate&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">ylabel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;True Positive Rate&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">title&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Logistic Regression ROC Curve&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">plt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">show&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The dotted line in the center represents a model that just randomly guesses. So what does this ROC model actually tell us?&lt;/p>
+&lt;ul>
+&lt;li>We calculate the area under the ROC curve (AUC). Scores range from 0 to 1 with 1 being the best. If the AUC is 0.5, it means the model is no better than a random guess.&lt;/li>
+&lt;li>When the ROC curve is above the dotted line, it means the model is better than just randomly guessing.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Run the imports&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">sklearn.metrics&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">roc_auc_score&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Call the auc score and print the results&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">roc_auc_score&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">y_test&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_pred_probs&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Classification Metrics and the Confusion Matrix</title><link>https://embergen.github.io/p/classification-metrics-and-the-confusion-matrix/</link><pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate><guid>https://embergen.github.io/p/classification-metrics-and-the-confusion-matrix/</guid><description>&lt;h1 id="metrics-for-classification-models">Metrics for Classification Models
+&lt;/h1>&lt;p>The word &amp;ldquo;acccuracy&amp;rdquo; is often used broadly to cover how close to the truth something is, but in data science the meaning is more specific. There are also metrics other than accuracy that will judge how correct a model is, and the one you choose depends on the purpose of your study. It might be preferable to have a false positive, or it might be more preferable to avoid a false negative, for example.&lt;/p>
+&lt;h2 id="negativespositives-in-classification">Negatives/Positives in Classification
+&lt;/h2>&lt;p>There are four potential outcomes for your predictions when performing binary classification:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>True Positive (TP)&lt;/strong>: You correctly labeled a positive data point as positive.&lt;/li>
+&lt;li>&lt;strong>False Positive (FP)&lt;/strong>: You incorrectly labeled a negative data point as positive.&lt;/li>
+&lt;li>&lt;strong>True Negative (TN)&lt;/strong>: You correctly labeled a negative data point as negative.&lt;/li>
+&lt;li>&lt;strong>False Negative (FN)&lt;/strong>: You incorrectly labeled a positive data point as negative.&lt;/li>
+&lt;/ul>
+&lt;p>As I mentioned, you will have different concerns based on the purpose of your analysis. For example, I did a machine learning assignment in school where I was using features to predict which students might need additional academic support. In my case, I was not overly concerned with false positives - if the school started academic intervention for a student who ended up not needing it, it would not be harmful for the student and the staff leading the support group would soon notice.&lt;/p>
+&lt;p>In other cases, you might be more concerned about false positives. For example, a spam detector that flags important emails as spam would not be useful to a client.&lt;/p>
+&lt;p>A &lt;strong>confusion matrix&lt;/strong> is a two-by-two grid which displays all of the values for TP, TN, FP, and FN.&lt;/p>
+&lt;p>&lt;img src="https://embergen.github.io/p/classification-metrics-and-the-confusion-matrix/2025-01-22_confusion-matrix.png"
+width="549"
+height="337"
+srcset="https://embergen.github.io/p/classification-metrics-and-the-confusion-matrix/2025-01-22_confusion-matrix_hu_6532b076fcc4abed.png 480w, https://embergen.github.io/p/classification-metrics-and-the-confusion-matrix/2025-01-22_confusion-matrix_hu_1741056d0a0490f.png 1024w"
+loading="lazy"
+alt="Confusion matrix"
+class="gallery-image"
+data-flex-grow="162"
+data-flex-basis="390px"
+>
+&lt;a class="link" href="https://rumn.medium.com/precision-recall-and-f1-explained-with-10-ml-use-case-6ef2fbe458e5" target="_blank" rel="noopener"
+>Source&lt;/a>&lt;/p>
+&lt;h2 id="metrics">Metrics
+&lt;/h2>&lt;p>These four classification outcomes lead to four metrics for assessing a classification model:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Accuracy&lt;/strong>: Out of all predictions, how many were correct?
+&lt;ul>
+&lt;li>Formula: (TP + TN) / (TP + TN + FP + FN)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Precision&lt;/strong>: Out of all the times the model predicted a positive, how often was that positive correct?
+&lt;ul>
+&lt;li>Formula: TP / (TP + FP)&lt;/li>
+&lt;li>High precision = lower FP rate&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Recall&lt;/strong>: Out of all the data points that should have been predicted as positive, how many were accurately predicted?
+&lt;ul>
+&lt;li>Formula: TP / (TP + FN)&lt;/li>
+&lt;li>High recall = lower FN rate&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>F1 Score&lt;/strong>: The harmonic mean of precision and recall, giving them equal weight. Useful when you have imbalanced data or want to account for both FP and FN.
+&lt;ul>
+&lt;li>Formula: 2 ((Precision * Recall) / (Precision + Recall))&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Relying on the wrong metric can lead to a false understanding of how well your model is performing. For example, a model might have a high accuracy score, but this might simply be the result of imbalanced data.&lt;/p>
+&lt;p>Let&amp;rsquo;s say you are trying to classify if something is a fish or a cow. If your data is 99% fish, and your model predicts that every sincle datapoint is a fish, then the accuracy score would be 99%. It sounds good, but it does not actually mean your model is good at differentiating between fish and cows.&lt;/p>
+&lt;h2 id="python-applications">Python Applications
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Import the libraries&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">sklearn.metrics&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">classification_report&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">confusion_matrix&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Instantiate the classifier&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">knn&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">KNeighborsClassifier&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">n_neighbors&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">7&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Split the data&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">X_train&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">X_test&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_train&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_test&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">train_test_split&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">X&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">test_size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">random_state&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">99&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Fit the model with the training data&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">knn&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">X_train&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_train&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Predict the labels for the test set&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">y_pred&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">knn&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">predict&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">X_test&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Generate a confusion matrix from the predicted labels and test labels&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">confusion_matrix&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">y_test&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_pred&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Generate metrics for the predicted and test labels&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">classification_report&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">y_test&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">y_pred&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Sample results of confusion matrix and classification report:&lt;/p>
+&lt;p>&lt;img src="https://embergen.github.io/p/classification-metrics-and-the-confusion-matrix/2025-01-22_code-output.png"
+width="465"
+height="214"
+srcset="https://embergen.github.io/p/classification-metrics-and-the-confusion-matrix/2025-01-22_code-output_hu_f78032a8a2d7f0f.png 480w, https://embergen.github.io/p/classification-metrics-and-the-confusion-matrix/2025-01-22_code-output_hu_cf5c90d566b59141.png 1024w"
+loading="lazy"
+alt="code output"
+class="gallery-image"
+data-flex-grow="217"
+data-flex-basis="521px"
+>&lt;/p></description></item></channel></rss>
