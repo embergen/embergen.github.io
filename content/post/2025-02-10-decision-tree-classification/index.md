@@ -1,6 +1,6 @@
 ---
 title: Decision Tree Classification
-description: 
+description: Basics on what classification trees are and how they work. 
 date: 2025-02-10 00:00:00+0000
 tags: 
     - scikit-learn
@@ -10,6 +10,8 @@ tags:
 categories:
     - machine learning
 ---
+
+The last few entries have been a back-to-basics review of concepts I've already learned. I'm excited now to dive into something that I know _of_, but have not actually used a lot. 
 
 What are classification trees? How do they work? 
 * They use a sequence of if-else statements about features to infer labels. Each statement has one feature and one split. 
