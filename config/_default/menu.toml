@@ -7,18 +7,19 @@
 #icon = "home"
 #newtab = true
 
-[[social]]
-identifier = "github"
-name = "GitHub"
-url = "https://github.com/CaiJimmy/hugo-theme-stack"
+# N2S: This is where the default site had icons linking to github/twitter. 
+# [[social]]
+# identifier = "github"
+# name = "GitHub"
+# url = "https://github.com/"
 
-[social.params]
-icon = "brand-github"
+# [social.params]
+# icon = "brand-github"
 
-[[social]]
-identifier = "twitter"
-name = "Twitter"
-url = "https://twitter.com"
+# [[social]]
+# identifier = "twitter"
+# name = "Twitter"
+# url = "https://twitter.com"
 
-[social.params]
-icon = "brand-twitter"
+# [social.params]
+# icon = "brand-twitter"

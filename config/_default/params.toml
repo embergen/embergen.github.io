@@ -5,7 +5,7 @@ rssFullContent = true
 favicon = "/favicon.png"
 
 [footer]
-since = 2020
+since = 2025
 customText = ""
 
 [dateFormat]
@@ -19,7 +19,7 @@ subtitle = "Welcome! This is my little data science hub. The posts are my notes 
 [sidebar.avatar]
 enabled = true
 local = true
-src = "img/avatar.png"
+src = "img/profile.jpg"
 
 [article]
 headingAnchor = false
