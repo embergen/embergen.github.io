@@ -7,6 +7,7 @@ tags:
     - supervised learning
     - python
     - decision trees
+    - classification
 categories:
     - machine learning
 ---

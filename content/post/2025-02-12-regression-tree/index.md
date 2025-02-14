@@ -1,12 +1,13 @@
 ---
 title: Decision Trees for Regression
-description: How entropy and the Gini Index affect how a decision tree model constructs itself
+description: Benefits of decision trees vs. linear regression
 date: 2025-02-12 00:00:00+0000
 tags: 
     - scikit-learn
     - supervised learning
     - python
     - decision trees
+    - regression
 categories:
     - machine learning
 ---
@@ -15,7 +16,7 @@ In the last couple of practice sessions, I was looking at regression for classif
 
 In a regression tree, the impurity is measuring by the MSE of the targets in a node - how spread out/mixed the target values are. The goal for each split is then to minimize this impurity. (A lower MSE = a more pure/homegenous node with less variance in the target values.)
 
-Why use a regression tree over a typical linear regression model? One benefit is that decision trees are more flexible - they can better capture non-linear relationships between feature and target variables. 
+Why use a regression tree over a typical linear regression model? One benefit is that decision trees are more flexible - they can better capture non-linear relationships between continuous variables and the target. 
 
 ![DataCamp: Linear Regression vs Decision Tree](linear_vs_dt.png)
 
