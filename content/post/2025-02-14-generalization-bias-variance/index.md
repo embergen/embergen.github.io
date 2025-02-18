@@ -1,6 +1,6 @@
 ---
 title: Generalization Error and the Bias-Variance Tradeoff
-description: 
+description: How bias and variance relate to underfitting/overfitting
 date: 2025-02-14 00:00:00+0000
 tags: 
     - scikit-learn

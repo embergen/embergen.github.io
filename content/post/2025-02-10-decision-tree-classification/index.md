@@ -14,6 +14,17 @@ categories:
 
 The last few entries have been a back-to-basics review of concepts I've already learned. I'm excited now to dive into something that I know _of_, but have not actually used a lot. 
 
+**CART** stands for "Classification and Regression Trees." 
+* Advantages: 
+    * Simple to understand and interpret
+    * Easy to use
+    * Flexible with non-linear dependences between features/target
+    * No need to standardize/normalize features beforehand
+* Limitations: 
+    * Classification trees can only produce orthoganal decision boundaries (perpendicular to axis)
+    * Sensitive to small variations in the training set
+    * High variance if trained without constraints (--> overfitting)
+
 What are classification trees? How do they work? 
 * They use a sequence of if-else statements about features to infer labels. Each statement has one feature and one split. 
 * They can work with non-linear relationships between features and labels.
@@ -27,7 +38,6 @@ The **maximum depth** is the maximum branches between the top and an extreme end
 A classification tree creates rectangular **decision regions** (regions where instances are assinged a class label), separated by **decision boundaries**. Note the difference between how logistic regression and decision trees divide the instances: 
 
 ![Source: DataCamp](decision_regions.png)
-
 
 Setting up a basic decision tree in python: 
 
