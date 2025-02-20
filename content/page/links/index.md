@@ -1,10 +1,18 @@
 ---
 title: Links
 links:
-  - title: GitHub
-    description: GitHub is the world's largest software development platform.
-    website: https://github.com
-    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+  - title: "Machine Learning: Early Intervention"
+    description: Building a regression model to predict which students would benefit from early educational intervention. Includes data exploration, data preparation, correlation, pipelines, transformers, model evaluation, and final interpretations for stakeholders. 
+    website: https://colab.research.google.com/drive/1OpyGNdw1dcQrdKNtt_DkFRhW0I61HQaF?usp=sharing%2F
+    image: early_intervention.png
+  - title: "Tableau: Sales Trends"
+    description: A dive into sales data broken down by category, quarter, region, etc. Includes various chart types, a dashboard, and a Tableau story with insidghts and suggestions. 
+    website: https://public.tableau.com/app/profile/esther.bergen/viz/ebergen_sales/DashboardEstherBergen
+    image: tableau.png
+  - title: "SQL: Netflix Data Preparation"
+    description: Creating and cleaning a table of Netflix data to prepare it for analysis using SQL. Includes handling nulls, fixing consistency errors, and reworking columns to make them more helpful for analytical purposes. 
+    website: https://gitfront.io/r/tompkinsxx/dhdSVFKYXvY3/netflix-sql/
+
 menu:
     main: 
         weight: 4
@@ -14,21 +22,4 @@ menu:
 comments: false
 ---
 
-To use this feature, add `links` section to frontmatter.
-
-This page's frontmatter:
-
-```yaml
-links:
-  - title: GitHub
-    description: GitHub is the world's largest software development platform.
-    website: https://github.com
-    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-  - title: TypeScript
-    description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
-    website: https://www.typescriptlang.org
-    image: ts-logo-128.jpg
-```
-
-`image` field accepts both local and external images.
-
+Follow the links below to check out a few projects I have completed. 
